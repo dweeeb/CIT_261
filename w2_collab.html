@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="text"></input>
+        <input type="button" value="Read" onclick="read()"></input>
+        <div id="theTag"></div>
+        <input type="text"></input>
+        <input type="button" value="Sum" onclick="doSum()"></input>
+        <div id="readSum"></div>
+        <input type="text"></input>
+        <input type="button" value="+" onclick="addSum()"></input>
+        <div id="readTotal"></div>
+        <script>
+            function read(){
+                var text = document.getElementsByTagName("input")[0].value;
+                document.getElementById("theTag").innerHTML = text;
+            }
+            function doSum(){
+                var theInput = document.getElementsByTagName("input")[2].value;
+                var num = parseInt(theInput, 10);
+                var sum = 0;
+                for(var i = 0; i < num; i++){
+                    sum += i + 1;
+                }
+                document.getElementById("readSum").innerHTML = sum;
+            }
+            var total = 0;
+            function addSum(){
+                var theInput = document.getElementsByTagName("input")[4].value;
+                total = total + parseInt(theInput, 10);
+                document.getElementById("readTotal").innerHTML = total;
+            }
+            const calculator = {
+               add: function(a, b){
+                return a + b;
+               },
+               sub: function(a, b){
+                return a - b;
+               },
+               mult: function(a, b){
+                return a * b;
+               },
+               divide: function(a, b){
+                return a / b;
+               }
+            };
+        </script>
+    </body>
+</html>
